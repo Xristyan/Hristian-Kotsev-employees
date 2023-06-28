@@ -1,17 +1,31 @@
 .table {
+  background-color: #ffffff;
   max-width: 50rem;
+  border-radius: 5%;
   margin: 5rem auto;
+  border: 5px solid rgb(62, 60, 60);
+  padding: 0.5rem;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.26);
+  animation: slide-down 300ms ease-out forwards;
 }
-.table,
-th,
+.table th,
 td {
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 1rem;
   text-align: center;
 }
 @media only screen and (max-width: 600px) {
   html {
     font-size: 10px;
+  }
+}
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

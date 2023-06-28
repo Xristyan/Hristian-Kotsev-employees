@@ -12,8 +12,14 @@
   border-radius: 7px;
   cursor: pointer;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.26);
+  font-family: sans-serif;
 }
 
+.file-input-label:hover {
+  background-color: #302e2e;
+  transition: all 0.2s;
+  color: white;
+}
 .file-input {
   position: absolute;
   top: 0;

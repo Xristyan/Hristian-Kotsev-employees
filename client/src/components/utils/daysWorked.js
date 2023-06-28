@@ -1,5 +1,8 @@
 import moment from "moment";
 const daysWorked = (dateFrom1, dateTo1, dateFrom2, dateTo2) => {
+  if (dateTo1 < dateFrom2) {
+    return 0;
+  }
   const startDate1 = format(dateFrom1);
   const endDate1 = dateTo1 !== "NULL" ? format(dateTo1) : new Date();
   const startDate2 = format(dateFrom2);
