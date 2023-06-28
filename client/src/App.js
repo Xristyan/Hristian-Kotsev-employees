@@ -8,6 +8,7 @@ function App() {
 
   const fileUpload = (employeeData) => {
     const groupedEmployees = groupingEmployees(employeeData);
+    console.log(groupedEmployees);
     let longestTime = [];
     let daysCount = 0;
     for (const key in groupedEmployees) {
