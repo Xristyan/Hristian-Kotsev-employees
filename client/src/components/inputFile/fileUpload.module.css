@@ -1,0 +1,23 @@
+.file-input-wrapper {
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.file-input-label {
+  padding: 1rem;
+  background-color: #ebebeb;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.26);
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
