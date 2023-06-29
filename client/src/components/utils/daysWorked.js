@@ -5,16 +5,18 @@ const daysWorked = (dateFrom1, dateTo1, dateFrom2, dateTo2) => {
   const startDate2 = format(dateFrom2);
   const endDate2 = dateTo2 !== "NULL" ? format(dateTo2) : new Date();
 
-  if (dateTo1 < dateFrom2 || dateTo2 < dateFrom1) {
+  if (endDate1 < startDate2 || endDate2 < startDate1) {
     return 0;
   }
-
   const startDate = startDate1 > startDate2 ? startDate1 : startDate2;
   const startDateFormated = format(startDate);
   const endDate = endDate1 < endDate2 ? endDate1 : endDate2;
   const endDateFormated = format(endDate);
   const duration = endDateFormated - startDateFormated;
   const days = Math.floor(duration / (1000 * 60 * 60 * 24));
+  if (days <= 0) {
+    return 0;
+  }
   return days + 1;
 };
 

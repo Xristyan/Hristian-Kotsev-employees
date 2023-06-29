@@ -14,6 +14,7 @@ const Table = (props) => {
       <tbody>
         {props.data
           .slice()
+          .filter((el) => el.daysWorked > 0)
           .sort((a, b) => b.daysWorked - a.daysWorked)
           .map((item) => (
             <tr key={item.id}>
