@@ -14,7 +14,7 @@ const daysWorked = (dateFrom1, dateTo1, dateFrom2, dateTo2) => {
   const endDateFormated = format(endDate);
   const duration = endDateFormated - startDateFormated;
   const days = Math.floor(duration / (1000 * 60 * 60 * 24));
-  if (days <= 0) {
+  if (days < 0) {
     return 0;
   }
   return days + 1;
