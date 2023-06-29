@@ -5,10 +5,14 @@ import Table from "./components/table/table";
 
 function App() {
   const [employeesLongestTime, setEmployeesLongestTime] = useState([]);
+  const [displayTable, setDisplayTable] = useState(false);
 
   const fileUpload = (employeeData) => {
+    if (employeeData.length === 0) {
+      setDisplayTable(false);
+      return;
+    }
     const groupedEmployees = groupingEmployees(employeeData);
-    console.log(groupedEmployees);
     let longestTime = [];
     let daysCount = 0;
     for (const key in groupedEmployees) {
@@ -18,11 +22,17 @@ function App() {
       }
     }
     setEmployeesLongestTime(longestTime);
+    if (longestTime.length > 0) {
+      setDisplayTable(true);
+    }
+    if (longestTime.length === 0) {
+      setDisplayTable(false);
+    }
   };
   return (
     <>
       <FileUpload onFileUpload={fileUpload} />
-      <Table data={employeesLongestTime} />
+      {displayTable && <Table data={employeesLongestTime} />}
     </>
   );
 }
